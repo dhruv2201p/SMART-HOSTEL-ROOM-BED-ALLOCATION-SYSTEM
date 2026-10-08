@@ -1,17 +1,8 @@
-# Python bytecode & cache
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Environments
 .env
-.venv/
-venv/
-ENV/
+.venv
 env/
-
-# IDE & OS
-.vscode/
-.idea/
+venv/
 .DS_Store
-Thumbs.db

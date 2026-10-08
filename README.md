@@ -1,100 +1,51 @@
-# 🏢 Smart Hostel Room & Bed Allocation System
+# Smart Hostel Room & Bed Allocation System (HMS)
 
-An intuitive, modern hostel management and room/bed allocation system built with Python and Streamlit. This application streamlines hostel operations by offering visual room/bed tracking, automated vacancy management, real-time analytics, student directory management, and dual interfaces (Web GUI & CLI).
+A modern, full-featured web application for managing hostel room and bed allocations, student records, and occupancy analytics.
 
----
-
-## ✨ Features
-
-- **📊 Interactive Admin Dashboard**: Real-time KPI metrics displaying total rooms, total beds, occupied beds, available beds, occupancy rate, and unallocated students.
-- **🛏️ Live Room Visualizer**: Visual room-by-room and bed-by-bed status cards (Occupied vs. Available) with instant student occupancy details.
-- **➕ Student Management**: Register new students with ID, Name, Branch/Course, Academic Year, and Contact Number with validation checks.
-- **🎯 Room & Bed Allocation**: Allocate students to available beds across rooms with automated validation preventing double allocation.
-- **🚪 Vacate Bed**: Seamless checkout/deallocation mechanism that automatically updates room and bed availability.
-- **🔍 Student Search**: Instantly find students and their allocation status by ID or Name.
-- **📋 Student Directory**: Tabular view of all registered students with filtering and status indicators.
-- **⚙️ Manage Rooms**: Add new rooms with custom bed capacity dynamically.
-- **💻 Dual Interface**:
-  - **Modern Streamlit Web App** (`frondend.py`)
-  - **Terminal / CLI Interactive Menu** (`bachend.py`)
+Built with Python and Streamlit.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Features
 
-- **Frontend / UI**: [Streamlit](https://streamlit.io/), Custom CSS & HTML Components
-- **Data Handling**: [Pandas](https://pandas.pydata.org/)
-- **Core Backend**: Python 3.x
-- **Deployment**: [Render](https://render.com/)
-
----
-
-## 🚀 Getting Started Locally
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/dhruv2201p/SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM.git
-cd SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM
-```
-
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the Web Application
-```bash
-streamlit run frondend.py
-```
-Open your browser and navigate to `http://localhost:8501`.
-
-### 4. (Optional) Run the Terminal CLI Version
-```bash
-python bachend.py
-```
+- **🏠 Live Room & Bed Map**: Real-time visual cards for all hostel rooms and bed statuses (`Full`, `Vacant`, `Partial`).
+- **➕ Student Registration**: Easy registration form with validation and optional instant room allotment.
+- **🛏️ Allocation Hub**: Seamless matching of unallocated students to vacant beds.
+- **👥 Student Roster**: Complete searchable student directory with CSV export.
+- **🚪 Bed Vacating**: One-click student checkout and bed release.
+- **🔍 Digital Resident Pass**: Instant student lookup with printable verified digital ID badge.
+- **📈 Capacity Analytics**: Altair visual charts of occupancy and department distribution.
 
 ---
 
-## 🌐 Deploy to Render
+## 🛠️ Local Development
 
-This project includes configuration ready for 1-click deployment on [Render](https://render.com/).
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Method 1: Using Render Blueprint (Automatic)
-1. Go to your [Render Dashboard](https://dashboard.render.com/).
-2. Click **New +** and select **Blueprint**.
-3. Connect your repository: `https://github.com/dhruv2201p/SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM`.
-4. Render will automatically detect [`render.yaml`](./render.yaml) and configure everything.
-5. Click **Apply**.
+2. Run the application:
+   ```bash
+   streamlit run frontend.py
+   ```
 
-### Method 2: Manual Web Service Setup
-1. On [Render Dashboard](https://dashboard.render.com/), click **New +** > **Web Service**.
-2. Select your GitHub repository: `SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM`.
-3. Configure the following fields:
-   - **Name**: `smart-hostel-allocation`
-   - **Runtime**: `Python 3`
+---
+
+## ☁️ Deployment on Render
+
+This repository is pre-configured for **Render** using `render.yaml`, `requirements.txt`, and `.streamlit/config.toml`.
+
+### Option A: Automatic Blueprint Deployment
+1. Push this repository to GitHub.
+2. In [Render Dashboard](https://dashboard.render.com), click **New +** > **Blueprint**.
+3. Connect your GitHub repository. Render will automatically detect `render.yaml` and configure everything.
+
+### Option B: Manual Web Service Setup
+1. In Render Dashboard, click **New +** > **Web Service**.
+2. Connect your GitHub repository.
+3. Configure settings:
+   - **Environment**: `Python 3`
    - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `streamlit run frondend.py --server.port $PORT --server.address 0.0.0.0`
-   - **Plan**: `Free`
-4. Click **Deploy Web Service**.
-
----
-
-## 📁 Project Structure
-
-```plaintext
-SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM/
-├── .streamlit/
-│   └── config.toml     # Streamlit server and cloud settings
-├── frondend.py         # Streamlit Web Application (Modern UI, Visualizer, Dashboard)
-├── bachend.py          # Terminal CLI Application & Core Logic
-├── render.yaml         # Render Blueprint configuration
-├── requirements.txt    # Project dependencies
-├── .gitignore          # Git ignore file for Python cache & environment files
-└── README.md           # Documentation
-```
-
----
-
-## 👤 Author
-
-- **Dhruv Katharotiya** - [dhruv2201p](https://github.com/dhruv2201p)
+   - **Start Command**: `streamlit run frontend.py --server.port $PORT --server.address 0.0.0.0`
+4. Click **Create Web Service**.

@@ -342,7 +342,7 @@ def hostel_summary():
 
 
 # Main program
-if __name__ == "__main__":
+def main():
     while True:
 
         print("\n==============================================")
@@ -389,3 +389,8 @@ if __name__ == "__main__":
 
         else:
             print("\nInvalid choice! Please enter a number from 1 to 8.")
+
+
+if __name__ == "__main__":
+    main()
+
