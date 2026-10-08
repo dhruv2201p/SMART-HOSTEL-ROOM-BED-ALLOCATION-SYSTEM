@@ -25,10 +25,11 @@ An intuitive, modern hostel management and room/bed allocation system built with
 - **Frontend / UI**: [Streamlit](https://streamlit.io/), Custom CSS & HTML Components
 - **Data Handling**: [Pandas](https://pandas.pydata.org/)
 - **Core Backend**: Python 3.x
+- **Deployment**: [Render](https://render.com/)
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started Locally
 
 ### 1. Clone the Repository
 ```bash
@@ -54,12 +55,39 @@ python bachend.py
 
 ---
 
+## 🌐 Deploy to Render
+
+This project includes configuration ready for 1-click deployment on [Render](https://render.com/).
+
+### Method 1: Using Render Blueprint (Automatic)
+1. Go to your [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** and select **Blueprint**.
+3. Connect your repository: `https://github.com/dhruv2201p/SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM`.
+4. Render will automatically detect [`render.yaml`](./render.yaml) and configure everything.
+5. Click **Apply**.
+
+### Method 2: Manual Web Service Setup
+1. On [Render Dashboard](https://dashboard.render.com/), click **New +** > **Web Service**.
+2. Select your GitHub repository: `SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM`.
+3. Configure the following fields:
+   - **Name**: `smart-hostel-allocation`
+   - **Runtime**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `streamlit run frondend.py --server.port $PORT --server.address 0.0.0.0`
+   - **Plan**: `Free`
+4. Click **Deploy Web Service**.
+
+---
+
 ## 📁 Project Structure
 
 ```plaintext
 SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM/
+├── .streamlit/
+│   └── config.toml     # Streamlit server and cloud settings
 ├── frondend.py         # Streamlit Web Application (Modern UI, Visualizer, Dashboard)
 ├── bachend.py          # Terminal CLI Application & Core Logic
+├── render.yaml         # Render Blueprint configuration
 ├── requirements.txt    # Project dependencies
 ├── .gitignore          # Git ignore file for Python cache & environment files
 └── README.md           # Documentation
