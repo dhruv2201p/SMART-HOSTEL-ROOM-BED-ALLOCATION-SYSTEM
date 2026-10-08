@@ -1,5 +1,7 @@
 # Smart Hostel Room & Bed Allocation System (HMS)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/dhruv2201p/SMART-HOSTEL-ROOM-BED-ALLOCATION-SYSTEM)
+
 A modern, full-featured web application for managing hostel room and bed allocations, student records, and occupancy analytics.
 
 Built with Python and Streamlit.
